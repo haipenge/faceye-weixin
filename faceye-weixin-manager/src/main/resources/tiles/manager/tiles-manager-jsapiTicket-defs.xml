@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:weixin 业务对像:JSAPITicket 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- JSAPITicket 管理 首页(列表页) -->
+	<definition name="weixin.jsapiTicket.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.jsapiTicket.center"></put-attribute>
+	</definition>
+	<definition name="weixin.jsapiTicket.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/jsapiTicket/jsapiTicket_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- JSAPITicket 新增,编辑页面 -->
+	<definition name="weixin.jsapiTicket.update" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.jsapiTicket.update.center"></put-attribute>
+	</definition>
+	<definition name="weixin.jsapiTicket.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/jsapiTicket/jsapiTicket_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- JSAPITicket 明细页 -->
+	<definition name="weixin.jsapiTicket.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.jsapiTicket.detail.center"></put-attribute>
+	</definition>
+	<definition name="weixin.jsapiTicket.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/jsapiTicket/jsapiTicket_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

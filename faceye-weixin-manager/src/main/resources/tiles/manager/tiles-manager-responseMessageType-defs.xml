@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:weixin 业务对像:ResponseMessageType 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- ResponseMessageType 管理 首页(列表页) -->
+	<definition name="weixin.responseMessageType.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.responseMessageType.center"></put-attribute>
+	</definition>
+	<definition name="weixin.responseMessageType.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/responseMessageType/responseMessageType_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- ResponseMessageType 新增,编辑页面 -->
+	<definition name="weixin.responseMessageType.update" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.responseMessageType.update.center"></put-attribute>
+	</definition>
+	<definition name="weixin.responseMessageType.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/responseMessageType/responseMessageType_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- ResponseMessageType 明细页 -->
+	<definition name="weixin.responseMessageType.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.responseMessageType.detail.center"></put-attribute>
+	</definition>
+	<definition name="weixin.responseMessageType.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/responseMessageType/responseMessageType_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

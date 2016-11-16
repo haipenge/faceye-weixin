@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:weixin 业务对像:OAuth2AccessToken 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- OAuth2AccessToken 管理 首页(列表页) -->
+	<definition name="weixin.oauth2AccessToken.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.oauth2AccessToken.center"></put-attribute>
+	</definition>
+	<definition name="weixin.oauth2AccessToken.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/oauth2AccessToken/oauth2AccessToken_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- OAuth2AccessToken 新增,编辑页面 -->
+	<definition name="weixin.oauth2AccessToken.update" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.oauth2AccessToken.update.center"></put-attribute>
+	</definition>
+	<definition name="weixin.oauth2AccessToken.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/oauth2AccessToken/oauth2AccessToken_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- OAuth2AccessToken 明细页 -->
+	<definition name="weixin.oauth2AccessToken.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.oauth2AccessToken.detail.center"></put-attribute>
+	</definition>
+	<definition name="weixin.oauth2AccessToken.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/oauth2AccessToken/oauth2AccessToken_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

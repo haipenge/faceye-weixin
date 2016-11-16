@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:weixin 业务对像:Msg 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Msg 管理 首页(列表页) -->
+	<definition name="weixin.msg.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.msg.center"></put-attribute>
+	</definition>
+	<definition name="weixin.msg.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/msg/msg_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Msg 新增,编辑页面 -->
+	<definition name="weixin.msg.update" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.msg.update.center"></put-attribute>
+	</definition>
+	<definition name="weixin.msg.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/msg/msg_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Msg 明细页 -->
+	<definition name="weixin.msg.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.msg.detail.center"></put-attribute>
+	</definition>
+	<definition name="weixin.msg.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/msg/msg_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

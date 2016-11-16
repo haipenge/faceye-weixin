@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:weixin 业务对像:Account 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Account 管理 首页(列表页) -->
+	<definition name="weixin.account.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.account.center"></put-attribute>
+	</definition>
+	<definition name="weixin.account.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/account/account_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Account 新增,编辑页面 -->
+	<definition name="weixin.account.update" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.account.update.center"></put-attribute>
+	</definition>
+	<definition name="weixin.account.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/account/account_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Account 明细页 -->
+	<definition name="weixin.account.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.account.detail.center"></put-attribute>
+	</definition>
+	<definition name="weixin.account.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/account/account_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:weixin 业务对像:ResponseContent 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- ResponseContent 管理 首页(列表页) -->
+	<definition name="weixin.responseContent.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.responseContent.center"></put-attribute>
+	</definition>
+	<definition name="weixin.responseContent.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/responseContent/responseContent_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- ResponseContent 新增,编辑页面 -->
+	<definition name="weixin.responseContent.update" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.responseContent.update.center"></put-attribute>
+	</definition>
+	<definition name="weixin.responseContent.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/responseContent/responseContent_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- ResponseContent 明细页 -->
+	<definition name="weixin.responseContent.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="weixin.responseContent.detail.center"></put-attribute>
+	</definition>
+	<definition name="weixin.responseContent.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/weixin/responseContent/responseContent_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

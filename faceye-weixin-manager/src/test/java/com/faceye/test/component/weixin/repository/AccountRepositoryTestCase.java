@@ -1,5 +1,8 @@
 package com.faceye.test.component.weixin.repository;
 
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,6 +55,11 @@ public class AccountRepositoryTestCase extends BaseRepositoryTestCase {
 		this.accountRepository.save(entity);
 		Account account=this.accountRepository.findOne(entity.getId());
 		Assert.isTrue(account!=null);
+	}
+	@Test
+	public void testGetAll() throws Exception{
+		List<Account> accounts=this.accountRepository.findAll();
+		Assert.isTrue(CollectionUtils.isNotEmpty(accounts));
 	}
 
 	

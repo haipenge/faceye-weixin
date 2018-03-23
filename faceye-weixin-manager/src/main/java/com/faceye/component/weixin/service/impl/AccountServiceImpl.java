@@ -18,7 +18,7 @@ import com.faceye.component.weixin.repository.mongo.AccountRepository;
 import com.faceye.component.weixin.service.AccountService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 
 @Service
@@ -30,7 +30,7 @@ public class AccountServiceImpl extends BaseMongoServiceImpl<Account, Long, Acco
 	}
 
 	@Override
-	public Page<Account> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Account> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

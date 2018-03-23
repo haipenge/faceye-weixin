@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.ResponseType;
 import com.faceye.component.weixin.repository.mongo.ResponseTypeRepository;
@@ -34,24 +34,24 @@ public class ResponseTypeRepositoryTestCase extends BaseRepositoryTestCase {
 		ResponseType entity = new ResponseType();
 		this.responseTypeRepository.save(entity);
 		Iterable<ResponseType> entities = this.responseTypeRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		ResponseType entity = new ResponseType();
 		this.responseTypeRepository.save(entity);
-        this.responseTypeRepository.delete(entity.getId());
+        this.responseTypeRepository.deleteById(entity.getId());
         Iterable<ResponseType> entities = this.responseTypeRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		ResponseType entity = new ResponseType();
 		this.responseTypeRepository.save(entity);
-		ResponseType responseType=this.responseTypeRepository.findOne(entity.getId());
-		Assert.isTrue(responseType!=null);
+		ResponseType responseType=this.responseTypeRepository.findById(entity.getId()).get();
+		Assert.assertTrue(responseType!=null);
 	}
 
 	

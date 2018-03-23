@@ -23,6 +23,6 @@ public class MsgApiTestCase extends BaseServiceTestCase {
 		byte buffer[] =new byte[1024];
 		InputStream input=new FileInputStream(path);
 //		ReceiveMessage receiveMsg=this.msgApi.parseXml(input);
-//		Assert.isTrue(receiveMsg!=null &&StringUtils.isNotEmpty(((TextMessage)receiveMsg).getContent()));
+//		Assert.assertTrue(receiveMsg!=null &&StringUtils.isNotEmpty(((TextMessage)receiveMsg).getContent()));
 	}
 }

@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.service.message.receive.XMLUtil;
 import com.faceye.component.weixin.service.message.response.ResponseMessage;
@@ -25,7 +25,7 @@ public class ResponseMessageTestCase {
 	 RichTextResponseMessage richTextResponseMessage= buildRichTextResponseMessage();
 	 String xml=JaxbMapper.toXml(richTextResponseMessage);
 	 logger.debug(xml);
-	 Assert.isTrue(StringUtils.isNotEmpty(xml));
+	 Assert.assertTrue(StringUtils.isNotEmpty(xml));
  }
  @Test
  public void testTextResponseMessage() throws Exception{
@@ -39,7 +39,7 @@ public class ResponseMessageTestCase {
 	 logger.debug("XML Before is:\n"+xml);
 	 xml=XMLUtil.rebuild(xml);
 	 logger.debug("1\n"+xml+"--1");
-	 Assert.isTrue(StringUtils.isNotEmpty(xml));
+	 Assert.assertTrue(StringUtils.isNotEmpty(xml));
  }
  
  private RichTextResponseMessage buildRichTextResponseMessage(){

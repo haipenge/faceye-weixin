@@ -280,7 +280,7 @@ public class Account implements Serializable {
 	private  String host="";
 	public String getHost() {
 		if(StringUtils.isEmpty(host)){
-			String weixinHost=BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.host");
+			String weixinHost=BeanContextUtil.getBean(PropertyService.class).get("weixin.host");
 			if(!StringUtils.contains(weixinHost, "$")){
 				host=weixinHost;
 			}

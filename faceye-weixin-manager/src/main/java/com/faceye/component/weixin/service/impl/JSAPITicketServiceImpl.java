@@ -18,7 +18,7 @@ import com.faceye.component.weixin.repository.mongo.JSAPITicketRepository;
 import com.faceye.component.weixin.service.JSAPITicketService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service
 public class JSAPITicketServiceImpl extends BaseMongoServiceImpl<JSAPITicket, Long, JSAPITicketRepository> implements JSAPITicketService {
@@ -30,7 +30,7 @@ public class JSAPITicketServiceImpl extends BaseMongoServiceImpl<JSAPITicket, Lo
 	
 	
 	@Override
-	public Page<JSAPITicket> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<JSAPITicket> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

@@ -19,7 +19,7 @@ import com.faceye.component.weixin.repository.mongo.ResponseContentItemRepositor
 import com.faceye.component.weixin.service.ResponseContentItemService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service
 public class ResponseContentItemServiceImpl extends BaseMongoServiceImpl<ResponseContentItem, Long, ResponseContentItemRepository> implements ResponseContentItemService {
@@ -31,7 +31,7 @@ public class ResponseContentItemServiceImpl extends BaseMongoServiceImpl<Respons
 	
 	
 	@Override
-	public Page<ResponseContentItem> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<ResponseContentItem> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

@@ -17,7 +17,7 @@ import com.faceye.component.weixin.repository.mongo.ResponseTypeRepository;
 import com.faceye.component.weixin.service.ResponseTypeService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service
 public class ResponseTypeServiceImpl extends BaseMongoServiceImpl<ResponseType, Long, ResponseTypeRepository> implements ResponseTypeService {
@@ -29,7 +29,7 @@ public class ResponseTypeServiceImpl extends BaseMongoServiceImpl<ResponseType, 
 	
 	
 	@Override
-	public Page<ResponseType> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<ResponseType> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

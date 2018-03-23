@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.OAuth2AccessToken;
 import com.faceye.component.weixin.repository.mongo.OAuth2AccessTokenRepository;
@@ -34,24 +34,24 @@ public class OAuth2AccessTokenRepositoryTestCase extends BaseRepositoryTestCase 
 		OAuth2AccessToken entity = new OAuth2AccessToken();
 		this.oauth2AccessTokenRepository.save(entity);
 		Iterable<OAuth2AccessToken> entities = this.oauth2AccessTokenRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		OAuth2AccessToken entity = new OAuth2AccessToken();
 		this.oauth2AccessTokenRepository.save(entity);
-        this.oauth2AccessTokenRepository.delete(entity.getId());
+        this.oauth2AccessTokenRepository.deleteById(entity.getId());
         Iterable<OAuth2AccessToken> entities = this.oauth2AccessTokenRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		OAuth2AccessToken entity = new OAuth2AccessToken();
 		this.oauth2AccessTokenRepository.save(entity);
-		OAuth2AccessToken oauth2AccessToken=this.oauth2AccessTokenRepository.findOne(entity.getId());
-		Assert.isTrue(oauth2AccessToken!=null);
+		OAuth2AccessToken oauth2AccessToken=this.oauth2AccessTokenRepository.findById(entity.getId()).get();
+		Assert.assertTrue(oauth2AccessToken!=null);
 	}
 
 	

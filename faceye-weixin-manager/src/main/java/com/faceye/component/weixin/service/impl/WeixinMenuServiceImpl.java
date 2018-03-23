@@ -20,7 +20,7 @@ import com.faceye.component.weixin.repository.mongo.WeixinMenuRepository;
 import com.faceye.component.weixin.service.WeixinMenuService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 
 @Service
@@ -32,7 +32,7 @@ public class WeixinMenuServiceImpl extends BaseMongoServiceImpl<WeixinMenu, Long
 	}
 
 	@Override
-	public Page<WeixinMenu> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<WeixinMenu> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -68,14 +68,14 @@ public class WeixinMenuServiceImpl extends BaseMongoServiceImpl<WeixinMenu, Long
 		Map searchParams = new HashMap();
 		searchParams.put("EQ|account.$id", account.getId());
 		searchParams.put("EQ|weixinMenuId", 0L);
-		return this.getPage(searchParams, 1, 0).getContent();
+		return super.getPage(searchParams, 1, 0).getContent();
 	}
 
 	@Override
 	public List<WeixinMenu> getWeixinMenusByWeixinMenu(WeixinMenu weixinMenu) {
 		Map searchParams = new HashMap();
 		searchParams.put("EQ|weixinMenuId", weixinMenu.getId());
-		return this.getPage(searchParams, 1, 0).getContent();
+		return super.getPage(searchParams, 1, 0).getContent();
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class WeixinMenuServiceImpl extends BaseMongoServiceImpl<WeixinMenu, Long
 		return weixinMenu;
 	}
 	@Override
-	public void save(WeixinMenu weixinMenu){
+	public WeixinMenu save(WeixinMenu weixinMenu){
 		Integer orderIndex=0;
 		if(weixinMenu.getId()==null){
 			WeixinMenu weixinMenuWithMaxOrderIndex=this.getWeixinMenuWithMaxOrderIndex(weixinMenu.getAccount(), weixinMenu.getWeixinMenuId());
@@ -130,6 +130,7 @@ public class WeixinMenuServiceImpl extends BaseMongoServiceImpl<WeixinMenu, Long
 			}
 		}
 		super.save(weixinMenu);
+		return weixinMenu;
 	}
 
 }/** @generate-service-source@ **/

@@ -22,7 +22,7 @@ import com.faceye.component.weixin.repository.mongo.OAuth2AccessTokenRepository;
 import com.faceye.component.weixin.service.OAuth2AccessTokenService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 
 @Service
@@ -35,7 +35,7 @@ public class OAuth2AccessTokenServiceImpl extends BaseMongoServiceImpl<OAuth2Acc
 	}
 
 	@Override
-	public Page<OAuth2AccessToken> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<OAuth2AccessToken> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

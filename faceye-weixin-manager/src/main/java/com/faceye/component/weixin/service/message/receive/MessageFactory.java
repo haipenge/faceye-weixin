@@ -1,11 +1,12 @@
 package com.faceye.component.weixin.service.message.receive;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.faceye.component.weixin.util.WeixinConstants;
 import com.faceye.feature.util.JaxbMapper;
@@ -17,7 +18,7 @@ import com.faceye.feature.util.JaxbMapper;
  * 创建时间:2015年5月27日
  */
 public class MessageFactory {
-	private Logger logger = Logger.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	private static MessageFactory factory = null;
 

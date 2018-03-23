@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.ResponseMessageType;
 import com.faceye.component.weixin.repository.mongo.ResponseMessageTypeRepository;
@@ -34,24 +34,24 @@ public class ResponseMessageTypeRepositoryTestCase extends BaseRepositoryTestCas
 		ResponseMessageType entity = new ResponseMessageType();
 		this.responseMessageTypeRepository.save(entity);
 		Iterable<ResponseMessageType> entities = this.responseMessageTypeRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		ResponseMessageType entity = new ResponseMessageType();
 		this.responseMessageTypeRepository.save(entity);
-        this.responseMessageTypeRepository.delete(entity.getId());
+        this.responseMessageTypeRepository.deleteById(entity.getId());
         Iterable<ResponseMessageType> entities = this.responseMessageTypeRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		ResponseMessageType entity = new ResponseMessageType();
 		this.responseMessageTypeRepository.save(entity);
-		ResponseMessageType responseMessageType=this.responseMessageTypeRepository.findOne(entity.getId());
-		Assert.isTrue(responseMessageType!=null);
+		ResponseMessageType responseMessageType=this.responseMessageTypeRepository.findById(entity.getId()).get();
+		Assert.assertTrue(responseMessageType!=null);
 	}
 
 	

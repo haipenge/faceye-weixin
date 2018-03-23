@@ -14,16 +14,17 @@
 		<faceye-security-web-manager-mongo.version>1.0</faceye-security-web-manager-mongo.version>
 		<faceye-weixin-entity.version>1.0</faceye-weixin-entity.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
 		<jetty.version>9.0.2.v20130417</jetty.version>
 		<jetty.orbit.version>3.0.0.v201112011016</jetty.orbit.version>
-		<querydsl.version>4.1.2</querydsl.version>
+		<querydsl.version>4.2.0</querydsl.version>
 		<servlet-api.version>3.0-alpha-1</servlet-api.version>
 		<junit.version>4.12</junit.version>
-		<spring.version>4.3.6.RELEASE</spring.version>
+		<spring.version>5.0.4.RELEASE</spring.version>
 		<dom4j.version>1.6.1</dom4j.version>
-		<eclipselink.version>2.6.0</eclipselink.version>
-		<zxing.version>3.2.0</zxing.version>
+		<eclipselink.version>2.7.1</eclipselink.version>
+		<zxing.version>3.3.2</zxing.version>
+		
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,6 +76,7 @@
 			<artifactId>core</artifactId>
 			<version>${zxing.version}</version>
 		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>faceye-weixin-manager</finalName>

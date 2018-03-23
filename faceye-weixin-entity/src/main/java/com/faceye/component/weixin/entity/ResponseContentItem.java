@@ -80,7 +80,7 @@ public class ResponseContentItem implements Serializable {
 	private String url;
 
 	public String getUrl() {
-//		String weixinHost=BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.host");
+//		String weixinHost=BeanContextUtil.getBean(PropertyService.class).get("weixin.host");
 //		if(StringUtils.isNotEmpty(url)&&StringUtils.isNotEmpty(weixinHost)){
 //			url=weixinHost+url;
 //		}
@@ -102,7 +102,7 @@ public class ResponseContentItem implements Serializable {
 	private String picUrl;
 
 	public String getPicUrl() {
-		String weixinImgHost=BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.img.host");
+		String weixinImgHost=BeanContextUtil.getBean(PropertyService.class).get("weixin.img.host");
 		if(StringUtils.isNotEmpty(picUrl)&& StringUtils.isNotEmpty(weixinImgHost)){
 			picUrl=weixinImgHost+picUrl;
 		}

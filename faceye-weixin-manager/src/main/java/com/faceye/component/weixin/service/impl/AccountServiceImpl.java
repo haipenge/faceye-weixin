@@ -30,7 +30,7 @@ public class AccountServiceImpl extends BaseMongoServiceImpl<Account, Long, Acco
 	}
 
 	@Override
-	public Page<Account> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Account> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

@@ -337,11 +337,11 @@ public class MsgApi extends API {
 	
 	private UserDefineResponseMessage getUserDefineResponseMessage(){
 		UserDefineResponseMessage userDefineResponseMessage=null;
-		String defaultMessageBean=BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.default.user.define.response.message.bean");
+		String defaultMessageBean=BeanContextUtil.getBean(PropertyService.class).get("weixin.default.user.define.response.message.bean");
 		if(StringUtils.isNotEmpty(defaultMessageBean) && !StringUtils.contains(defaultMessageBean, "$")){
-			userDefineResponseMessage=BeanContextUtil.getInstance().getBean(defaultMessageBean);
+			userDefineResponseMessage=BeanContextUtil.getBean(defaultMessageBean);
 		}else{
-			userDefineResponseMessage=BeanContextUtil.getInstance().getBean("defaultUserDefineResponseMessage");
+			userDefineResponseMessage=BeanContextUtil.getBean("defaultUserDefineResponseMessage");
 		}
 		return userDefineResponseMessage;
 	}

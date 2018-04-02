@@ -356,6 +356,6 @@ public class WeixinPayServiceImpl implements WeixinPayService {
 	}
 
 	private PayBusinessReCallService getPayBusinessReCallService() {
-		return BeanContextUtil.getInstance().getBean(BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.pay.business.recall.bean.name"));
+		return BeanContextUtil.getBean(BeanContextUtil.getBean(PropertyService.class).get("weixin.pay.business.recall.bean.name"));
 	}
 }

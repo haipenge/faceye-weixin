@@ -35,7 +35,7 @@ public class OAuth2AccessTokenServiceImpl extends BaseMongoServiceImpl<OAuth2Acc
 	}
 
 	@Override
-	public Page<OAuth2AccessToken> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<OAuth2AccessToken> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

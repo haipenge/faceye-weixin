@@ -32,7 +32,7 @@ public class WeixinUserServiceImpl extends BaseMongoServiceImpl<WeixinUser, Long
 	}
 
 	@Override
-	public Page<WeixinUser> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<WeixinUser> getPage(Map<String, Object> searchParams, int page, int size) {
 		if (page != 0) {
 			page = page - 1;
 		}

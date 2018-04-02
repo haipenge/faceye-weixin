@@ -38,7 +38,7 @@ public class ResponseContentServiceImpl extends BaseMongoServiceImpl<ResponseCon
 	}
 
 	@Override
-	public void save(ResponseContent responseContent) {
+	public ResponseContent save(ResponseContent responseContent) {
 		super.save(responseContent);
 		// 同时只能有一条有效的回复，其它回复不可同时有效
 		if (responseContent != null && responseContent.getIsEnabled()) {
@@ -56,6 +56,7 @@ public class ResponseContentServiceImpl extends BaseMongoServiceImpl<ResponseCon
 				}
 			}
 		}
+		return responseContent;
 	}
 
 	/**
@@ -119,7 +120,7 @@ public class ResponseContentServiceImpl extends BaseMongoServiceImpl<ResponseCon
 	}
 
 	@Override
-	public Page<ResponseContent> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<ResponseContent> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

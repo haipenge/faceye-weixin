@@ -29,7 +29,7 @@ public class MsgServiceImpl extends BaseMongoServiceImpl<Msg, Long, MsgRepositor
 	
 	
 	@Override
-	public Page<Msg> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Msg> getPage(Map<String, Object> searchParams, int page, int size) {
 		if (page != 0) {
 			page = page - 1;
 		}

@@ -29,7 +29,7 @@ public class ResponseMessageTypeServiceImpl extends BaseMongoServiceImpl<Respons
 	
 	
 	@Override
-	public Page<ResponseMessageType> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<ResponseMessageType> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

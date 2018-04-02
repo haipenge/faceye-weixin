@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.JSAPITicket;
 import com.faceye.component.weixin.repository.mongo.JSAPITicketRepository;
@@ -34,24 +34,24 @@ public class JSAPITicketRepositoryTestCase extends BaseRepositoryTestCase {
 		JSAPITicket entity = new JSAPITicket();
 		this.jsapiTicketRepository.save(entity);
 		Iterable<JSAPITicket> entities = this.jsapiTicketRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		JSAPITicket entity = new JSAPITicket();
 		this.jsapiTicketRepository.save(entity);
-        this.jsapiTicketRepository.delete(entity.getId());
+        this.jsapiTicketRepository.deleteById(entity.getId());
         Iterable<JSAPITicket> entities = this.jsapiTicketRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		JSAPITicket entity = new JSAPITicket();
 		this.jsapiTicketRepository.save(entity);
-		JSAPITicket jsapiTicket=this.jsapiTicketRepository.findOne(entity.getId());
-		Assert.isTrue(jsapiTicket!=null);
+		JSAPITicket jsapiTicket=this.jsapiTicketRepository.findById(entity.getId()).get();
+		Assert.assertTrue(jsapiTicket!=null);
 	}
 
 	

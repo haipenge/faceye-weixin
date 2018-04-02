@@ -51,7 +51,6 @@ import com.faceye.feature.util.JaxbMapper;
 import com.faceye.feature.util.SHAUtils;
 import com.faceye.feature.util.bean.BeanContextUtil;
 import com.faceye.feature.util.http.HttpUtil;
-import com.mchange.v2.codegen.bean.Property;
 
 
 /**

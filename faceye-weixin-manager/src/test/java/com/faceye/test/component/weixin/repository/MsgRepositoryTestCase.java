@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.Msg;
 import com.faceye.component.weixin.repository.mongo.MsgRepository;
@@ -34,24 +34,24 @@ public class MsgRepositoryTestCase extends BaseRepositoryTestCase {
 		Msg entity = new Msg();
 		this.msgRepository.save(entity);
 		Iterable<Msg> entities = this.msgRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Msg entity = new Msg();
 		this.msgRepository.save(entity);
-        this.msgRepository.delete(entity.getId());
+        this.msgRepository.deleteById(entity.getId());
         Iterable<Msg> entities = this.msgRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Msg entity = new Msg();
 		this.msgRepository.save(entity);
-		Msg msg=this.msgRepository.findOne(entity.getId());
-		Assert.isTrue(msg!=null);
+		Msg msg=this.msgRepository.findById(entity.getId()).get();
+		Assert.assertTrue(msg!=null);
 	}
 
 	

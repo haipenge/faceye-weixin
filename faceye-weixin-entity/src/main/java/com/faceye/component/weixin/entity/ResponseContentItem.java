@@ -80,7 +80,7 @@ public class ResponseContentItem implements Serializable {
 	private String url;
 
 	public String getUrl() {
-//		String weixinHost=BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.host");
+//		String weixinHost=BeanContextUtil.getBean(PropertyService.class).get("weixin.host");
 //		if(StringUtils.isNotEmpty(url)&&StringUtils.isNotEmpty(weixinHost)){
 //			url=weixinHost+url;
 //		}

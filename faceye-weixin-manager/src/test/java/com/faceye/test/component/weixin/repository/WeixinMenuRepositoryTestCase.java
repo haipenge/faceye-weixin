@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.WeixinMenu;
 import com.faceye.component.weixin.repository.mongo.WeixinMenuRepository;
@@ -34,24 +34,24 @@ public class WeixinMenuRepositoryTestCase extends BaseRepositoryTestCase {
 		WeixinMenu entity = new WeixinMenu();
 		this.weixinMenuRepository.save(entity);
 		Iterable<WeixinMenu> entities = this.weixinMenuRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		WeixinMenu entity = new WeixinMenu();
 		this.weixinMenuRepository.save(entity);
-        this.weixinMenuRepository.delete(entity.getId());
+        this.weixinMenuRepository.deleteById(entity.getId());
         Iterable<WeixinMenu> entities = this.weixinMenuRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		WeixinMenu entity = new WeixinMenu();
 		this.weixinMenuRepository.save(entity);
-		WeixinMenu weixinMenu=this.weixinMenuRepository.findOne(entity.getId());
-		Assert.isTrue(weixinMenu!=null);
+		WeixinMenu weixinMenu=this.weixinMenuRepository.findById(entity.getId()).get();
+		Assert.assertTrue(weixinMenu!=null);
 	}
 
 	

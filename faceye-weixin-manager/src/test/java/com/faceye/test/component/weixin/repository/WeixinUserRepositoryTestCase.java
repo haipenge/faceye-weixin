@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.WeixinUser;
 import com.faceye.component.weixin.repository.mongo.WeixinUserRepository;
@@ -34,24 +34,24 @@ public class WeixinUserRepositoryTestCase extends BaseRepositoryTestCase {
 		WeixinUser entity = new WeixinUser();
 		this.weixinUserRepository.save(entity);
 		Iterable<WeixinUser> entities = this.weixinUserRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		WeixinUser entity = new WeixinUser();
 		this.weixinUserRepository.save(entity);
-        this.weixinUserRepository.delete(entity.getId());
+        this.weixinUserRepository.deleteById(entity.getId());
         Iterable<WeixinUser> entities = this.weixinUserRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		WeixinUser entity = new WeixinUser();
 		this.weixinUserRepository.save(entity);
-		WeixinUser weixinUser=this.weixinUserRepository.findOne(entity.getId());
-		Assert.isTrue(weixinUser!=null);
+		WeixinUser weixinUser=this.weixinUserRepository.findById(entity.getId()).get();
+		Assert.assertTrue(weixinUser!=null);
 	}
 
 	

@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.service.api.BaseApi;
 import com.faceye.component.weixin.service.message.response.AccessToken;
@@ -23,6 +23,6 @@ public class BaseApiTestCase extends BaseServiceTestCase {
 	@Test
 	public void testGetAccessToken() throws Exception {
 		AccessToken accessToken = baseApi.getAccessToken(accountId, true);
-		Assert.isTrue(StringUtils.isEmpty(accessToken.getErrcode()) && StringUtils.isNotEmpty(accessToken.getAccess_token()));
+		Assert.assertTrue(StringUtils.isEmpty(accessToken.getErrcode()) && StringUtils.isNotEmpty(accessToken.getAccess_token()));
 	}
 }

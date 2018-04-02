@@ -20,7 +20,7 @@ import com.faceye.component.weixin.repository.mongo.WeixinMenuRepository;
 import com.faceye.component.weixin.service.WeixinMenuService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 
 @Service
@@ -32,7 +32,11 @@ public class WeixinMenuServiceImpl extends BaseMongoServiceImpl<WeixinMenu, Long
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Page<WeixinMenu> getPage(Map<String, Object> searchParams, int page, int size)  {
+=======
+	public Page<WeixinMenu> getPage(Map<String, Object> searchParams, int page, int size)   {
+>>>>>>> f3c73da5e7c393cc77bf7755815c10b795080b6a
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -68,14 +72,14 @@ public class WeixinMenuServiceImpl extends BaseMongoServiceImpl<WeixinMenu, Long
 		Map searchParams = new HashMap();
 		searchParams.put("EQ|account.$id", account.getId());
 		searchParams.put("EQ|weixinMenuId", 0L);
-		return this.getPage(searchParams, 1, 0).getContent();
+		return super.getPage(searchParams, 1, 0).getContent();
 	}
 
 	@Override
 	public List<WeixinMenu> getWeixinMenusByWeixinMenu(WeixinMenu weixinMenu) {
 		Map searchParams = new HashMap();
 		searchParams.put("EQ|weixinMenuId", weixinMenu.getId());
-		return this.getPage(searchParams, 1, 0).getContent();
+		return super.getPage(searchParams, 1, 0).getContent();
 	}
 
 	/**

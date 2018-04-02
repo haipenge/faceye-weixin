@@ -7,7 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.weixin.entity.Account;
 import com.faceye.component.weixin.repository.mongo.AccountRepository;
@@ -37,29 +37,29 @@ public class AccountRepositoryTestCase extends BaseRepositoryTestCase {
 		Account entity = new Account();
 		this.accountRepository.save(entity);
 		Iterable<Account> entities = this.accountRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Account entity = new Account();
 		this.accountRepository.save(entity);
-        this.accountRepository.delete(entity.getId());
+        this.accountRepository.deleteById(entity.getId());
         Iterable<Account> entities = this.accountRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Account entity = new Account();
 		this.accountRepository.save(entity);
-		Account account=this.accountRepository.findOne(entity.getId());
-		Assert.isTrue(account!=null);
+		Account account=this.accountRepository.findById(entity.getId()).get();
+		Assert.assertTrue(account!=null);
 	}
 	@Test
 	public void testGetAll() throws Exception{
 		List<Account> accounts=this.accountRepository.findAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(accounts));
+		Assert.assertTrue(CollectionUtils.isNotEmpty(accounts));
 	}
 
 	

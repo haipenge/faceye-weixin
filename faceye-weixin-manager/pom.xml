@@ -20,11 +20,7 @@
 		<querydsl.version>4.2.0</querydsl.version>
 		<servlet-api.version>3.0-alpha-1</servlet-api.version>
 		<junit.version>4.12</junit.version>
-<<<<<<< HEAD
-		<spring.version>4.3.9.RELEASE</spring.version>
-=======
 		<spring.version>5.0.4.RELEASE</spring.version>
->>>>>>> f3c73da5e7c393cc77bf7755815c10b795080b6a
 		<dom4j.version>1.6.1</dom4j.version>
 		<eclipselink.version>2.7.1</eclipselink.version>
 		<zxing.version>3.3.2</zxing.version>
